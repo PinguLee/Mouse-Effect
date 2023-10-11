@@ -32,7 +32,6 @@
       display: flex;
       position: absolute;
       visibility: hidden;
-      top: 10px;
     }
 
     #rotate>li {
@@ -62,13 +61,12 @@
     const area = document.getElementById('area');
     const rotate = document.getElementById('rotate');
 
-
     area.addEventListener("mousemove", e => {
       rotate.style.visibility = "visible";
-      rotate.style.left = `${e.offsetX}px`;
-      rotate.style.top = `${e.offsetY}px`;
+      rotate.style.left = `${e.clientX}px`;
+      rotate.style.top = `${e.clientY}px`;
     });
-    area.addEventListener("mouseout", e => {
+    area.addEventListener("mouseleave", e => {
       rotate.style.visibility = "hidden";
     });
   </script>
