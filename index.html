@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
       list-style: none;
       list-style-type: none;
     }
+
     #root {
       display: flex;
       justify-content: center;
@@ -19,12 +21,14 @@
       width: 100vw;
       height: 100vh;
     }
-    ul {
+
+    .area {
       width: 80vh;
       height: 80vh;
       background-color: black;
     }
-    li {
+
+    .area>li {
       width: 10px;
       height: 10px;
       background-color: red;
@@ -32,9 +36,10 @@
     }
   </style>
 </head>
+
 <body>
   <div id="root">
-    <ul>
+    <ul class="area">
       <li></li>
       <li></li>
       <li></li>
@@ -43,7 +48,9 @@
     </ul>
   </div>
   <script>
-
+    const root = document.getElementById('root');
+    const area = document.getElementById('area');
   </script>
 </body>
+
 </html>
