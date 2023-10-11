@@ -85,15 +85,21 @@
     const rotate = document.getElementById('rotate');
 
     let rotateX, rotateY;
+    let angle = 0;
 
     const one = rotate.children[0];
     const two = rotate.children[1];
     const three = rotate.children[2];
     const four = rotate.children[3]
 
-    circle = setInterval(() => {
 
-    }, 10);
+
+    circle = setInterval(() => {
+      one.style.left = rotateX + 50 * Math.cos(angle);
+      one.style.top = rotateY + 50 * Math.sin(angle);
+
+      angle += 0.3;
+    }, 1000 / 30);
 
     area.addEventListener("mousemove", e => {
       rotate.style.visibility = "visible";
