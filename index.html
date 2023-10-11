@@ -29,7 +29,10 @@
     }
 
     #rotate {
+      display: flex;
+      position: absolute;
       visibility: hidden;
+      top: 10px;
     }
 
     #rotate>li {
@@ -61,12 +64,9 @@
 
 
     area.addEventListener("mousemove", e => {
-
       rotate.style.visibility = "visible";
-      console.log(e.offsetX);
-      rotate.style.top = e.offsetY;
-
-
+      rotate.style.left = `${e.offsetX}px`;
+      rotate.style.top = `${e.offsetY}px`;
     });
   </script>
 </body>
