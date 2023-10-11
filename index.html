@@ -22,13 +22,17 @@
       height: 100vh;
     }
 
-    .area {
+    #area {
       width: 80vh;
       height: 80vh;
       background-color: black;
     }
 
-    .area>li {
+    #rotate {
+      visibility: hidden;
+    }
+
+    #rotate>li {
       width: 10px;
       height: 10px;
       background-color: red;
@@ -39,22 +43,30 @@
 
 <body>
   <div id="root">
-    <ul class="area">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+    <div id="area">
+      <ul id="rotate">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+
   </div>
   <script>
     const root = document.getElementById('root');
-    const area = document.querySelector('.area');
+    const area = document.getElementById('area');
+    const rotate = document.getElementById('rotate');
+
 
     area.addEventListener("mousemove", e => {
+
+      rotate.style.visibility = "visible";
       console.log(e.offsetX);
-      console.log(e.offsetY);
-      
+      rotate.style.top = e.offsetY;
+
+
     });
   </script>
 </body>
