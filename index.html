@@ -33,6 +33,7 @@
       height: 30px;
       display: flex;
       position: absolute;
+      transform: translate(-50%, -50%);
       visibility: hidden;
     }
 
@@ -48,14 +49,17 @@
       top: 0;
       left: 0;
     }
+
     #rotate>li:nth-child(2) {
       top: 0;
       left: 100%;
     }
+
     #rotate>li:nth-child(3) {
       top: 100%;
       left: 0;
     }
+
     #rotate>li:nth-child(4) {
       top: 100%;
       left: 100%;
@@ -64,7 +68,7 @@
 </head>
 
 <body>
-  <div id="root">
+  <div id="root">Ï
     <div id="area">
       <ul id="rotate">
         <li></li>
@@ -80,14 +84,28 @@
     const area = document.getElementById('area');
     const rotate = document.getElementById('rotate');
 
+    let rotateX, rotateY;
+
+    const one = rotate.children[0];
+    const two = rotate.children[1];
+    const three = rotate.children[2];
+    const four = rotate.children[3]
+
+    circle = setInterval(() => {
+
+    }, 10);
+
     area.addEventListener("mousemove", e => {
       rotate.style.visibility = "visible";
       rotate.style.left = `${e.clientX}px`;
+      rotateX = rotate.style.left;
       rotate.style.top = `${e.clientY}px`;
+      rotateY = rotate.style.top;
     });
     area.addEventListener("mouseleave", e => {
       rotate.style.visibility = "hidden";
     });
+
   </script>
 </body>
 
