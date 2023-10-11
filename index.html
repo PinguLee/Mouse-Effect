@@ -34,7 +34,7 @@
       display: flex;
       position: absolute;
       visibility: hidden;
-      transform: translate(calc(-50% - 5px), calc(-50% - 5px));
+      animation: rot 3s linear infinite;
     }
 
     #rotate>li {
@@ -64,6 +64,16 @@
       top: 100%;
       left: 100%;
     }
+
+    @keyframes rot {
+      0% {
+        transform: translate(calc(-50% - 5px), calc(-50% - 5px)) rotate(0deg);
+      }
+
+      100% {
+        transform: translate(calc(-50% - 5px), calc(-50% - 5px)) rotate(360deg);
+      }
+    }
   </style>
 </head>
 
@@ -86,12 +96,6 @@
 
     let rotateX = rotate.style.left;
     let rotateY = rotate.style.top;
-    let a = 0;
-    
-    test = () => {
-      rotate.style.transform = `rotate(${a}deg)`;
-      requestAnimationFrame();
-    };
 
     area.addEventListener("mousemove", e => {
       rotate.style.visibility = "visible";
