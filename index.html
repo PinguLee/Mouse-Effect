@@ -68,6 +68,9 @@
       rotate.style.left = `${e.offsetX}px`;
       rotate.style.top = `${e.offsetY}px`;
     });
+    area.addEventListener("mouseout", e => {
+      rotate.style.visibility = "hidden";
+    });
   </script>
 </body>
 
